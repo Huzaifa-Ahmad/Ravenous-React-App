@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-// const apiKey = process.env.REACT_APP_API_KEY;
+// const apiKey = process.env.REACT_APP_YELP_API_KEY;
 
 const apiKey =
   "UpH6AXGlsaQrRprqCn39YgB-LZ5xeILoqwiLHgIbL7t4FPTc7y2Y1LSM-ZLBscQRMHonTTDg9Bpc7tcFWyKs6TKvKPKpc9_Bj9RcMAtZUGlLo4JUZcezC3c1PIQJXnYx";
