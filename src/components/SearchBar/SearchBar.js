@@ -9,7 +9,8 @@ class SearchBar extends React.Component {
       location: "",
       sortBy: "best_match"
     };
-    this.handleSortByChange = this.handleSortByChange.bind(this);
+
+    // this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -19,21 +20,6 @@ class SearchBar extends React.Component {
       "Highest Rated": "rating",
       "Most Reviewed": "review_count"
     };
-  }
-
-  renderSortByOptions() {
-    return Object.keys(this.sortByOptions).map(sortByOption => {
-      let sortByOptionValue = this.sortByOptions[sortByOption];
-      return (
-        <li
-          key={sortByOptionValue}
-          className={this.getSortByClass(sortByOptionValue)}
-          onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
-        >
-          {sortByOption}
-        </li>
-      );
-    });
   }
 
   getSortByClass(sortByOption) {
@@ -53,14 +39,28 @@ class SearchBar extends React.Component {
   }
 
   handleSearch(event) {
-    var term = this.state.term;
-    var location = this.state.location;
-    var sortBy = this.state.sortBy;
-
-    this.props.searchYelp(term, location, sortBy);
-
+    this.props.searchYelp(
+      this.state.term,
+      this.state.location,
+      this.state.sortBy
+    );
     // prevent sending a request if the search bar is empty
     event.preventDefault();
+  }
+
+  renderSortByOptions() {
+    return Object.keys(this.sortByOptions).map(sortByOption => {
+      let sortByOptionValue = this.sortByOptions[sortByOption];
+      return (
+        <li
+          key={sortByOptionValue}
+          className={this.getSortByClass(sortByOptionValue)}
+          onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
+        >
+          {sortByOption}
+        </li>
+      );
+    });
   }
 
   render() {

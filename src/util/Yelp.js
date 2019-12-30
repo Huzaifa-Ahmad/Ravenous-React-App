@@ -1,8 +1,6 @@
 const apiKey =
   "UpH6AXGlsaQrRprqCn39YgB-LZ5xeILoqwiLHgIbL7t4FPTc7y2Y1LSM-ZLBscQRMHonTTDg9Bpc7tcFWyKs6TKvKPKpc9_Bj9RcMAtZUGlLo4JUZcezC3c1PIQJXnYx";
 
-const fetch = window.fetch.bind(window);
-
 const Yelp = {
   searchYelp(term, location, sortBy) {
     return fetch(
@@ -17,8 +15,8 @@ const Yelp = {
         return response.json();
       })
       .then(jsonResponse => {
-        if (jsonResponse.business) {
-          return jsonResponse.business.map(business => {
+        if (jsonResponse.businesses) {
+          return jsonResponse.businesses.map(business => {
             console.log(business);
             return {
               id: business.id,
