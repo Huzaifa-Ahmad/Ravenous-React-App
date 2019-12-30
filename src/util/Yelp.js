@@ -1,10 +1,8 @@
 require("dotenv").config();
 
-// const apiKey = process.env.REACT_APP_YELP_API_KEY;
+const apiKey = process.env.REACT_APP_YELP_API_KEY;
 
-const apiKey =
-  "UpH6AXGlsaQrRprqCn39YgB-LZ5xeILoqwiLHgIbL7t4FPTc7y2Y1LSM-ZLBscQRMHonTTDg9Bpc7tcFWyKs6TKvKPKpc9_Bj9RcMAtZUGlLo4JUZcezC3c1PIQJXnYx";
-console.log(process.env.REACT_APP_YELP_API_KEY);
+// const apiKey = "UpH6AXGlsaQrRprqCn39YgB-LZ5xeILoqwiLHgIbL7t4FPTc7y2Y1LSM-ZLBscQRMHonTTDg9Bpc7tcFWyKs6TKvKPKpc9_Bj9RcMAtZUGlLo4JUZcezC3c1PIQJXnYx";
 
 const Yelp = {
   searchYelp(term, location, sortBy) {
@@ -22,7 +20,6 @@ const Yelp = {
       .then(jsonResponse => {
         if (jsonResponse.businesses) {
           return jsonResponse.businesses.map(business => {
-            console.log(business);
             return {
               id: business.id,
               imageSrc: business.image_url,
