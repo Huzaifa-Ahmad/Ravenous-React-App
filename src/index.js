@@ -5,6 +5,9 @@ import App from "./components/App/App";
 import * as serviceWorker from "./serviceWorker";
 require("dotenv").config();
 
+console.log(process.env.REACT_APP_API_KEY);
+// const api = process.env.API_KEY;
+
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
